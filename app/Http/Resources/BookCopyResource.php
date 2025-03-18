@@ -18,7 +18,6 @@ class BookCopyResource extends JsonResource
             'aisle' => $this->aisle,
             'shelf' => $this->shelf,
             'number' => $this->number,
-            'library_id' => $this->library_id,
             'created_at' => $this->created_at,
             'updated_at' => $this->updated_at,
         ];

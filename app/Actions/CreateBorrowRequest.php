@@ -11,6 +11,8 @@ use Illuminate\Support\Facades\DB;
  */
 class CreateBorrowRequest extends Action
 {
+    use UsesBookCopyFromRequest;
+
     public function rules(): array
     {
         return [
@@ -34,14 +36,5 @@ class CreateBorrowRequest extends Action
         $borrowRequest->save();
 
         return $borrowRequest;
-    }
-
-    private function bookCopy(): ?BookCopy
-    {
-        return once(fn () => BookCopy::query()
-            ->where('id', $this->book_copy_id)
-            ->whereAccessibleTo($this->user())
-            ->whereAvailable()
-            ->first());
     }
 }
