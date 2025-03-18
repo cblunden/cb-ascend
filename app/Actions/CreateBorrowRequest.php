@@ -5,6 +5,7 @@ namespace App\Actions;
 use App\Models\BookCopy;
 use App\Models\BorrowRequest;
 use Illuminate\Support\Facades\DB;
+use App\Traits\UsesBookCopyFromRequest;
 
 /**
  * @property int $book_copy_id
