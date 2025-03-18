@@ -35,7 +35,7 @@ prefer.
 1. Performance Issue in Loading Book Copies:
    - **Bug Description:** Due to the large quantity of books in the system, users are experiencing difficulty loading the list of book copies available to them.
    - **Tasks:**
-     - [ ] Identify and resolve the performance bottleneck to ensure efficient loading of book copies for users.
+     - [x] Identify and resolve the performance bottleneck to ensure efficient loading of book copies for users.
 
 2. Simultaneous Book Requests
    - **Bug Description:** Staff have complained that 2 users have been able to request to borrow a book at the same time. Validation appears to be there and working, but the dev team cannot understand why this is still happening.
@@ -47,8 +47,8 @@ prefer.
 1. Automated Book Returns with Scanners 
    - **Feature Description:** Currently, book borrows/returns are handled manually by administrators. The libraries have invested in scanners to introduce a self-scan service for its library users. Scanners are capable of making API requests to the library system. Design a RESTful API that can handle book borrows/returns from scanners. NB: borrows are different from borrow requests - a borrow request is essentially a book that is reserved in the library, but a borrow is when the book is taken from the library therefore you will need to think about how you would record borrows/returns in the database. Consider authentication for security.
    - **Tasks:**
-     - [ ] Implement a RESTful API endpoint to handle book borrows from scanners.
-     - [ ] Implement a RESTful API endpoint to handle book returns from scanners.
+     - [x] Implement a RESTful API endpoint to handle book borrows from scanners.
+     - [x] Implement a RESTful API endpoint to handle book returns from scanners.
 
 ### Part Three: New Features Implementation
 

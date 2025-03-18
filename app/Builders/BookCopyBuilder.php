@@ -63,4 +63,10 @@ class BookCopyBuilder extends Builder
         return $this->whereDoesntHave('borrows', fn (Builder $borrowRequests) => $borrowRequests
             ->whereNull('returned_at'));
     }
+
+    public function whereHasActiveBorrow(): static
+    {
+        return $this->whereHas('borrows', fn (Builder $borrowRequests) => $borrowRequests
+            ->whereNull('returned_at'));
+    }
 }

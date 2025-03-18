@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
+use App\Models\BookBorrow;
 
 /**
  * @method static BookCopyBuilder query()
@@ -28,7 +29,7 @@ class BookCopy extends Model
 
     public function borrows(): HasMany
     {
-        return $this->hasMany(Borrow::class);
+        return $this->hasMany(BookBorrow::class);
     }
 
     public function borrowRequests(): HasMany
@@ -67,5 +68,10 @@ class BookCopy extends Model
     public function isAvailable(): bool
     {
         return $this->status === Status::AVAILABLE->value;
+    }
+
+    public function isBorrowed(): bool
+    {
+        return $this->status === Status::BORROWED->value;
     }
 }
